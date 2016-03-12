@@ -1,10 +1,10 @@
-# Generator-jekyllrb 
+# Generator-jekyllrb-react
 
 [![Build Status](https://travis-ci.org/dnozay/generator-jekyllrb.svg?branch=master)](https://travis-ci.org/dnozay/generator-jekyllrb)
 
 **Supercharge Jekyll development with Yeoman. Yo, Jekyllrb!**
 
-Generator-jekyllrb wraps the [Jekyll](http://jekyllrb.com/) static site generator in a [Yeoman](http://yeoman.io/) development workflow. Scaffold your site with Yo, manage front end packages with [Bower](http://bower.io/), and automate development and build tasks with [Grunt](http://gruntjs.com/). 
+Generator-jekyllrb wraps the [Jekyll](http://jekyllrb.com/) static site generator in a [Yeoman](http://yeoman.io/) development workflow and now with React!. Scaffold your site with Yo, manage front end packages with [Bower](http://bower.io/), and automate development and build tasks with [Grunt](http://gruntjs.com/). 
 
 Generator-jekyllrb is ideal for developing performant static sites and prototyping dynamic sites and apps (especially if the final version uses Yeoman too). It's also a great introduction to Yeoman if you're not familiar with JavaScript MV* frameworks.
 
@@ -32,7 +32,7 @@ Common problems? Common questions? Check out the [FAQ.md](FAQ.md)
 ## Getting Started
 
 - generator-jekyllrb requires [Node.js](http://nodejs.org/) `>= 0.10`, [Ruby](http://www.ruby-lang.org/) `>= 1.9`
-- Install the generator: `npm install -g generator-jekyllrb`
+- Install the generator: `npm install -g generator-jekyllrb-react`
 - Run: `yo jekyllrb`
 
 ## Grunt Workflow
