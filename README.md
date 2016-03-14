@@ -34,6 +34,7 @@ Common problems? Common questions? Check out the [FAQ.md](FAQ.md)
 ## Getting Started
 
 - generator-jekyllrb requires [Node.js](http://nodejs.org/) `>= 0.10`, [Ruby](http://www.ruby-lang.org/) `>= 1.9`
+- If get `UNMET PEER DEPENDENCY`, update your mocha generator and yo: `npm install -g yo` and `npm install generator-mocha` with `npm install -g grunt-cli bower yo generator-karma`
 - Install the generator: `npm install -g generator-jekyllrb-react`
 - Run: `yo jekyllrb`
 
