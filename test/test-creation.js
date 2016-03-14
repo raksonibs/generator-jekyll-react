@@ -5,7 +5,6 @@ var path    = require('path');
 var helpers = require('yeoman-generator').test;
 var assert = require('yeoman-generator').assert;
 
-
 describe('jekyll generator', function () {
 
   var runGen;

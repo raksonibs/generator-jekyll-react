@@ -3,11 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "description": "Yeoman workflow for <%= appname %>",
-  "dependencies": {<% if (react) %>
+  "dependencies": {
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.2.1",
-    "redux": "^3.2.1" <% %>},
+    "redux": "^3.2.1" 
+  },
   "devDependencies": {
     "grunt": "~0.4.5",<% if (autoPre) { %>
     "grunt-autoprefixer": "~1.0.1",<% } %><% if (deploy) { %>
@@ -34,7 +35,7 @@
     "grunt-usemin": "~2.4.0",
     "jshint-stylish": "~0.4.0",
     "load-grunt-tasks": "~0.6.0",
-    "time-grunt": "~0.4.0", <% if (react) { %>
+    "time-grunt": "~0.4.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.2.1",
@@ -48,7 +49,7 @@
     "cross-env": "^1.0.7",
     "enzyme": "^2.0.0",
     "node-libs-browser": "^0.5.2",
-    "react-addons-test-utils": "^0.14.7" <% } %>
+    "react-addons-test-utils": "^0.14.7"
   },
   "engines": {
     "node": ">=0.8.0"

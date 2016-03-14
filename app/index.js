@@ -74,7 +74,7 @@ Generator.prototype.askForUser = function askForUser() {
   console.log(this.yeoman||this.welcome); // changed in 0.18.7
   console.log(chalk.green.bold('generator-jekyllrb version: ' + pjson.version));
   console.log(chalk.yellow.bold('This generator will scaffold and wire a Jekyll site. Yo, Jekyllrb!') +
-    chalk.yellow('\n\nTell us a little about yourself.') + ' ☛');
+    chalk.yellow('\n\nTell us a little about yourself.') + ' ☛ ');
 
   this.prompt(prompts, function (props) {
 
@@ -109,7 +109,7 @@ Generator.prototype.askForTools = function askForTools() {
     default: 'None'
   }];
 
-  console.log(chalk.yellow('\nWire tools and preprocessors.') + ' ☛');
+  console.log(chalk.yellow('\nWire tools and preprocessors.') + ' ☛ ');
 
   this.prompt(prompts, function (props) {
 
@@ -170,16 +170,10 @@ Generator.prototype.askForStructure = function askForStructure() {
     filter: slashFilter,
     when: function () {
       return jsPre;
-    },
-    {
-      name: 'react',
-      type: 'confirm',
-      message: 'Use React?',
-      default: false
-    },
+    }
   }];
 
-  console.log(chalk.yellow('\nSet up some directories.') + ' ☛' +
+  console.log(chalk.yellow('\nSet up some directories.') + ' ☛ ' +
     '\nSee note about nested directories in the README.');
 
   this.prompt(prompts, function (props) {
@@ -191,14 +185,12 @@ Generator.prototype.askForStructure = function askForStructure() {
     this.fontsDir  = props.fontsDir;
     this.cssPreDir = props.cssPreDir;
     this.jsPreDir  = props.jsPreDir;
-    this.react  = props.react;
 
     // Split asset directories on slashes
     this.cssExDir   = props.cssDir.split('/').pop();
     this.jsExDir    = props.jsDir.split('/').pop();
     this.imgExDir   = props.imgDir.split('/').pop();
     this.fontsExDir = props.fontsDir.split('/').pop();
-    this.reactExDir = props.react.split('/').pop();
 
     cb();
   }.bind(this));
@@ -254,7 +246,7 @@ Generator.prototype.askForTemplates = function askForTemplates() {
     }
   }];
 
-  console.log(chalk.yellow('\nChoose a template.') + ' ☛');
+  console.log(chalk.yellow('\nChoose a template.') + ' ☛ ');
 
   this.prompt(prompts, function (props) {
 
@@ -301,7 +293,7 @@ Generator.prototype.askForDeployment = function askForDeployment() {
     }
   }];
 
-  console.log(chalk.yellow('\nChoose deployment options.') + ' ☛');
+  console.log(chalk.yellow('\nChoose deployment options.') + ' ☛ ');
 
   this.prompt(prompts, function (props) {
 
@@ -352,7 +344,7 @@ Generator.prototype.askForJekyll = function askForJekyll() {
     }
   }];
 
-  console.log(chalk.yellow('\nAnd finally, configure Jekyll.') + ' ☛' +
+  console.log(chalk.yellow('\nAnd finally, configure Jekyll.') + ' ☛ ' +
               '\nYou can change all of these options in _config.yml.');
 
   this.prompt(prompts, function (props) {
@@ -433,6 +425,7 @@ Generator.prototype.templates = function templates() {
   this.mkdir(path.join('app', this.jsDir));
   this.mkdir(path.join('app', this.imgDir));
   this.mkdir(path.join('app', this.fontsDir));
+  this.mkdir(path.join('app/' + this.jsDir + 'components'));
 
   // Jekyll config files
   this.copy('_config.build.yml', '_config.build.yml');
@@ -441,6 +434,8 @@ Generator.prototype.templates = function templates() {
   // Project posts
   this.copy(path.join(this.jekyllTmp, '_posts', formattedDate + '-welcome-to-jekyll.markdown'), path.join('app/_posts', formattedDate + '-welcome-to-jekyll.md'));
   this.template('app/_posts/yo-jekyllrb.md', 'app/_posts/' + formattedDate + '-yo-jekyllrb.md');
+  this.copy('templates/conditional/HelloWorld.js', path.join('app', this.jsDir, 'components/HelloWorld.js'));
+  // this.write(path.join('app', 'js/components', 'Component.js'), '');
 
   // Jekyll default template
   if (this.templateType === 'default') {
@@ -455,8 +450,8 @@ Generator.prototype.templates = function templates() {
 
     // Empty file for Usemin defaults
     this.write(path.join('app', this.jsDir, 'main.js'), '');
-  }
 
+  }
   // HTML5 Boilerplate template
   else if (this.templateType === 'h5bp') {
     var cb = this.async();
