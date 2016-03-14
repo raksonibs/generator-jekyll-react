@@ -20,9 +20,6 @@ describe('jekyll generator', function () {
     '_config.yml',
     'app/_layouts/default.html',
     'app/_layouts/post.html',
-    // todo: have to be careful with dates.
-    // 'app/_posts/2015-01-18-welcome-to-jekyll.md',
-    // 'app/_posts/2015-01-18-yo-jekyllrb.md',
     'bower.json',
     'Gemfile',
     'Gruntfile.js',

@@ -19,7 +19,7 @@ module.exports = function (grunt) {
     react: {
       files: {
         expand: true,
-        cwd: '<%%= yeoman.app %>/<%= jsPreDir %>/components',
+        cwd: '<%%= yeoman.app %>/<%= jsDir %>/components',
         src: ['**/*.jsx'],
         dest: '<%%= yeoman.app %>/js',
         ext: '.js'
