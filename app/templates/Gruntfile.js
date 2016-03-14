@@ -15,14 +15,29 @@ module.exports = function (grunt) {
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
 
-  grunt.initConfig({
-    react: {
-      files: {
-        expand: true,
-        cwd: '<%%= yeoman.app %>/<%= jsDir %>/components',
-        src: ['**/*.jsx'],
-        dest: '<%%= yeoman.app %>/js',
-        ext: '.js'
+  // babel: {
+  //   options: {
+  //     sourceMap: true,
+  //     presets: ['es2015']
+  //   },
+  //   dist: {
+  //     files: {
+  //       '<%= yeoman.app %>/dist/main.js': '<%= yeoman.app %>/src/main.es6.js'
+  //     }
+  //   }
+  // },
+
+    browserify: {
+      default: {
+        options: {
+          browserifyOptions: {
+            debug: true,
+            transform: ['reactify']
+          }
+        },
+        files: {
+          'app/dist/main.js': ['app/src/**/*.js']
+        }
       }
     },
     // Configurable paths
@@ -407,12 +422,13 @@ server: [
     }
 
     grunt.task.run([
+      'babel',
       'clean:server',
       'concurrent:server',<% if (autoPre) { %>
-      'autoprefixer:dist',<% } %>
-      'browserSync:server',
-      'watch'
-    ]);
+        'autoprefixer:dist',<% } %>
+        'browserSync:server',
+        'watch'
+        ]);
   });
 
   grunt.registerTask('server', function () {
