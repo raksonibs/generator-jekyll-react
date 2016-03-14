@@ -15,18 +15,12 @@ module.exports = function (grunt) {
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
 
-  // babel: {
-  //   options: {
-  //     sourceMap: true,
-  //     presets: ['es2015']
-  //   },
-  //   dist: {
-  //     files: {
-  //       '<%= yeoman.app %>/dist/main.js': '<%= yeoman.app %>/src/main.es6.js'
-  //     }
-  //   }
-  // },
-
+    // Configurable paths
+    yeoman: {
+      app: 'app',
+      dist: 'dist'
+    },
+    
     browserify: {
       default: {
         options: {
@@ -36,14 +30,9 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          'app/dist/main.js': ['app/src/**/*.js']
+          '<%%= yeoman.app %>/dist/main.js': ['<%%= yeoman.app %>/src/**/*.js']
         }
       }
-    },
-    // Configurable paths
-    yeoman: {
-      app: 'app',
-      dist: 'dist'
     },
     watch: {<% if (cssPre === 'sass' || cssPre === 'compass' ) { %>
       <%= cssPre %>: {
