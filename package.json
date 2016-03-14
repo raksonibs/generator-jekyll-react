@@ -1,7 +1,7 @@
 {
   "name": "generator-jekyllrb-react",
   "description": "Supercharge Jekyll development with Yeoman and React. Yo, Jekyllrb!",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "homepage": "https://github.com/raksonibs/generator-jekyllrb-react",
   "author": "Oskar Niburski <oskarniburski@gmail.com> (http://raksonibs.github.io)",
   "repository": {
