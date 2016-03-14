@@ -434,7 +434,7 @@ Generator.prototype.templates = function templates() {
   // Project posts
   this.copy(path.join(this.jekyllTmp, '_posts', formattedDate + '-welcome-to-jekyll.markdown'), path.join('app/_posts', formattedDate + '-welcome-to-jekyll.md'));
   this.template('app/_posts/yo-jekyllrb.md', 'app/_posts/' + formattedDate + '-yo-jekyllrb.md');
-  this.copy('templates/conditional/HelloWorld.js', path.join('app', this.jsDir, 'components/HelloWorld.js'));
+  this.copy('/conditional/HelloWorld.js', path.join('app', this.jsDir, 'components/HelloWorld.js'));
   // this.write(path.join('app', 'js/components', 'Component.js'), '');
 
   // Jekyll default template
