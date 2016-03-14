@@ -421,12 +421,13 @@ Generator.prototype.templates = function templates() {
   this.mkdir('app/_posts');
   this.mkdir('app/_includes');
   this.mkdir('app/_plugins');
+  this.mkdir('app/dist');
+  this.mkdir('app/src/components');
   this.mkdir(path.join('app', this.cssDir));
   this.mkdir(path.join('app', this.jsDir));
   this.mkdir(path.join('app', this.imgDir));
-  this.mkdir(path.join('app', this.fontsDir));
-  this.mkdir(path.join('app/' + this.jsDir + '/components'));
-
+  this.mkdir(path.join('app', this.fontsDir));  
+  this.copy('conditional/HelloWorld.jsx', path.join('app/src/main.js'));
   // Jekyll config files
   this.copy('_config.build.yml', '_config.build.yml');
   this.template('_config.yml');
@@ -434,7 +435,7 @@ Generator.prototype.templates = function templates() {
   // Project posts
   this.copy(path.join(this.jekyllTmp, '_posts', formattedDate + '-welcome-to-jekyll.markdown'), path.join('app/_posts', formattedDate + '-welcome-to-jekyll.md'));
   this.template('app/_posts/yo-jekyllrb.md', 'app/_posts/' + formattedDate + '-yo-jekyllrb.md');
-  this.copy('conditional/HelloWorld.jsx', path.join('app', this.jsDir, 'components/HelloWorld.jsx'));
+  
 
   // Jekyll default template
   if (this.templateType === 'default') {
